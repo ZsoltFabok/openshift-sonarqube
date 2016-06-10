@@ -1,0 +1,25 @@
+Name: openshift-sonarqube
+Cartridge-Short-Name: app
+Display-Name: Sonar Cartridge
+Description: "Sonarqube"
+Version: "0.1"
+License: "BSD"
+Vendor: None
+Cartridge-Version: "0.1"
+Cartridge-Vendor: zsoltfabok
+Website: https://github.com/zsoltfabok/openshift-sonarqube
+Source-Url: https://github.com/zsoltfabok/openshift-sonarqube/archive/master.zip
+Categories:
+  - service
+Endpoints:
+  - Private-IP-Name:   IP
+    Private-Port-Name: PORT
+    Private-Port:      9000
+    Public-Port-Name:  PROXY_PORT
+    Mappings:
+      - Frontend:      ""
+        Backend:       ""
+        Options:       { websocket: false }
+  - Private-IP-Name:   SONAR_SEARCH_IP
+    Private-Port-Name: SONAR_SEARCH_PORT
+    Private-Port:      35530
