@@ -56,7 +56,7 @@ then
 fi
 
 # Adapt elasticsearch port to be in permitted range 15000-35530 for openshift, as specified here: https://help.openshift.com/hc/en-us/articles/202185874
-sed -i "s/^#sonar.search.port=.*$/sonar.search.port=35530/" sonar.properties
+sed -i "s/^#sonar.search.port=.*$/sonar.search.port=$OPENSHIFT_APP_SONAR_SEARCH_PORT=/" sonar.properties
 # Also bind elasticsearch to $OPENSHIFT_DIY_IP instead of localhost
 sed -i "s/^#sonar.search.host=.*$/sonar.search.host=$OPENSHIFT_DIY_IP/" sonar.properties
 
